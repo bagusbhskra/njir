@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Untuk Kekasihku Tercinta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 15px;
+            perspective: 1000px;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            margin: 20px 0;
+            font-size: 2.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+            transform-style: preserve-3d;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .heart {
+            position: fixed;
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            animation: float 5s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .message-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform-style: preserve-3d;
+            animation: fadeIn 1.5s ease-out;
+            transition: all 0.3s ease;
+        }
+        
+        .message-box:hover {
+            transform: translateY(-5px) rotateX(5deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .special {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #ffe66d;
+            margin: 25px 0;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073; }
+            to { text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #ff4da6, 0 0 40px #ff4da6; }
+        }
+        
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            margin: 30px auto;
+            border: 5px solid white;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: rotate 20s linear infinite;
+            position: relative;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            margin: 20px 0;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.6);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Animasi khusus untuk iOS */
+        @supports (-webkit-touch-callout: none) {
+            .message-box {
+                -webkit-backdrop-filter: blur(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="hearts-container"></div>
+    
+    <div class="container">
+        <h1>Untuk Tya</h1>
+        
+        <div class="message-box">
+            <p>Hai sayangku...</p>
+            <p>Setiap hari bersamamu adalah anugerah yang tak ternilai.</p>
+            <p class="special">Kamu adalah alasan di balik setiap senyumku</p>
+            <p>Terima kasih telah menjadi cahaya dalam hidupku, mengisi hari-hariku dengan cinta dan tawa.</p>
+        </div>
+        
+        <div class="message-box">
+            <p>Aku mungkin tidak sempurna, tapi cintaku padamu sempurna adanya.</p>
+            <p class="special">Aku mencintaimu lebih dari kata-kata bisa ungkapkan</p>
+            <p>Bersamamu, aku menemukan rumah dalam pelukanmu, kedamaian dalam senyumanmu, dan cinta sejati dalam hatimu.</p>
+        </div>
+        
+        <button class="btn" id="loveBtn">Kirim Ciuman</button>
+        
+        <footer>
+            <p>Dibuat dengan ❤️ hanya untukmu</p>
+        </footer>
+    </div>
+
+    <script>
+        // Membuat hati-hati mengambang
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts-container');
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.classList.add('heart');
+            
+            // Posisi acak
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            
+            heartsContainer.appendChild(heart);
+            
+            // Hapus elemen setelah animasi selesai
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        
+        // Membuat hati setiap 300ms
+        setInterval(createHearts, 300);
+        
+        // Efek tombol ciuman
+        document.getElementById('loveBtn').addEventListener('click', function() {
+            // Buat efek ledakan hati
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.classList.add('heart');
+                    heart.style.left = '50%';
+                    heart.style.top = '80%';
+                    heart.style.animationDuration = Math.random() * 2 + 1 + 's';
+                    heart.style.fontSize = Math.random() * 25 + 15 + 'px';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+            
+            // Animasi getar
+            this.style.animation = 'shake 0.5s';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 500);
+        });
+        
+        // Animasi untuk setiap elemen message-box saat muncul
+        const messageBoxes = document.querySelectorAll('.message-box');
+        messageBoxes.forEach((box, index) => {
+            box.style.animationDelay = `${index * 0.3}s`;
+        });
+        
+        // Musik latar (opsional)
+        function playMusic() {
+            const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+            audio.loop = true;
+            // Mulai hanya setelah interaksi pengguna
+            document.body.addEventListener('click', function() {
+                audio.play();
+            }, { once: true });
+        }
+        
+        // Uncomment untuk mengaktifkan musik
+        // playMusic();
+    </script>
+</body>
+</html>
